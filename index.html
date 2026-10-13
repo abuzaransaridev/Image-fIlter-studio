@@ -1,4 +1,4 @@
-<!DOUCTYPE>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
@@ -11,156 +11,192 @@
 		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 		
 		<style>
-			*
-			{
-				padding:0;
-				margin:0;
-				box-sizing:border-box;
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
 			}
-			body
-			{
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
 				font-family: Arial, Helvetica, sans-serif;
 				background: #050a12;
 				color: #f5f7fa;
 			}
-			a{
+			a {
 				text-decoration: none;
 				color: inherit;
 			}
-			header
-			{				
-				padding:0% 7%;
-				width:100%;
-				height:58px;
-				display:flex;
-				align-items:center;
-				justify-content:space-between;
-				position:sticky;	
-				top:0;
-				border-bottom:1px solid white;
-				background:green;
+			header {
+				padding: 0 7%;
+				min-height: 70px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				position: sticky;
+				top: 0;
+				z-index: 10;
+				border-bottom: 1px solid #1e293b;
+				background: rgba(5, 10, 18, 0.96);
 			}
-			.project_name
-			{
-				font-size:26;
-				font-weight:700;
-				color:blue;
+			.project_name {
+				font-size: 26px;
+				font-weight: 700;
+				color: #f5f7fa;
 			}
-			.project_name span
-			{
-				color:red;
+			.project_name span {
+				color: #38bdf8;
 			}
-			nav
-			{
-				display:flex;
-				gap:25px;		
+			nav {
+				display: flex;
+				gap: 25px;
 			}
-			nav a
-			{
-				padding:5% 0;				
+			nav a {
+				padding: 10px 0;
+				color: #cbd5e1;
+				transition: 0.3s;
 			}
-			nav a:hover
-			{
-				border-bottom:1px solid red;
+			nav a:hover {
+				color: #38bdf8;
+				border-bottom: 2px solid #38bdf8;
 			}
-			.home_section
-			{
-				height:85vh;
-				background:gray;
-				width:100%;
+			.home_section {
+				width: 100%;
+				background: linear-gradient(135deg,#050a12 0%,#0b1730 55%,#111827 100%);
 			}
-			.main_containt
-			{
-				display:flex;
-				align-items:center;
-				background-color:blue;
-				gap:20px;
-				padding:5% 7%;
+			.main_containt {
+				display: flex;
+				align-items: center;
+				gap: 40px;
+				padding: 70px 7%;
 			}
-			.left_containt
-			{
-				background:pink;
-				max-width:40%;
-				height:360px;
+			.left_containt {
+				width:40%;
+				min-width: 0;
 			}
-			.left_containt h1
-			{
-				font-size:clamp(60px, 8vw, 70px); 
-				margin-bottom:20px;
-				margin-top:10px; 				
-				line-height:1;
+			.left_containt > span {
+				display: inline-block;
+				color: #38bdf8;
+				letter-spacing: 3px;
+				font-size: 13px;
+				margin-bottom: 15px;
 			}
-			.left_containt p
-			{
-				margin-bottom:25px;
+			.left_containt h1 {
+				font-size: clamp(38px, 5vw, 65px);
+				margin-bottom: 20px;
+				line-height: 1.1;
+				color: #f8fafc;
 			}
-			.img_containt
-			{
-				background:yellow;
-				border:2px solid red;
-				width:100%;
-				height:360px;
+			.left_containt p {
+				color: #cbd5e1;
+				line-height: 1.8;
+				margin-bottom: 30px;
 			}
-			.img_containt img
-			{
-				height:100%;
-				width:100%;
+			.img_containt {
+				width:60%;
+				min-width: 0;
+				height: 360px;
+				border: 1px solid #334155;
+				border-radius: 14px;
+				background: #0f172a;
+				border: 1px solid rgba(56, 189, 248, 0.4); 
+				overflow: hidden; 
+				box-shadow: 0 0 15px rgba(0, 140, 255, 0.15), 0 0 35px rgba(0, 100, 255, 0.2), 0 0 70px rgba(0, 80, 255, 0.12);				
 			}
-			.view_gallery_button
-			{
-				background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
-				text-transform: uppercase;
-				transition: 0.5s;
-				background-size: 200% auto;
-				color: white;
-				box-shadow: 0 0 10px #209cff;
+			.img_containt img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.view_gallery_button {
+				background: linear-gradient(90deg, #2563eb, #7c3aed);
+				color: #ffffff;
 				border-radius: 30px;
-				padding: 16px 28px;
+				padding: 15px 25px;
 				display: inline-flex;
 				align-items: center;
-				gap: 50px;
-				font-size: 16px;
-				transition: 0.3s;			
+				gap: 25px;
+				font-size: 15px;
+				font-weight: 600;
+				box-shadow: 0 5px 20px rgba(37, 99, 235, 0.25);
+				transition: 0.3s;
 			}
-			.apply_filter_section
-			{
-				padding:1% 7%;
-				background:green;
+			.view_gallery_button:hover {
+				background: linear-gradient(90deg, #0284c7, #6366f1);
+				transform: translateY(-3px);
 			}
-			.filter_buttons_container
-			{
-				display:grid;
-				grid-template-columns: repeat(7,1fr);
-				gap:15px;
-				margin-top:20px;
+			.apply_filter_section {
+				padding: 40px 7% 60px;
+				background: #0b1220;
+				border-top: 1px solid #1e293b;
 			}
-			.filter_buttons_container a
-			{
-				text-decoration:none;
-				padding: 16px 28px;
-				background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
-				border-radius: 30px;
-				display:flex;
-				align-items:center;
-				justify-content:center;
+			.apply_filter_section h2 {
+				font-size: 30px;
+				margin-bottom: 10px;
+				color: #f8fafc;
 			}
-			.imag_container
-			{
-				display:grid;
-				grid-template-columns:repeat(3,1fr);
-				gap:20px;
-				margin-top:20px;
+			.apply_filter_section > span {
+				color: #94a3b8;
+				line-height: 1.7;
 			}
-			.imag_container div
-			{
-				width:100%;
+			.filter_buttons_container {
+				display: grid;
+				grid-template-columns: repeat(7, minmax(0, 1fr));
+				gap: 12px;
+				margin-top: 25px;
 			}
-			.imag_container div img
-			{
-				width:100%;
-				height:220px;
-				border-radius:10px;
+			.filter_buttons_container a {
+				padding: 15px 10px;
+				text-align: center;
+				color: #e2e8f0;
+				background: #172338;
+				border: 1px solid #2a3a53;
+				border-radius: 10px;
+				transition: 0.3s;
 			}
+			.filter_buttons_container a:hover {
+				background: linear-gradient(90deg, #2563eb, #7c3aed);
+				border-color: #60a5fa;
+				color: #ffffff;
+				transform: translateY(-2px);
+			}
+			.imag_container {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 20px;
+				margin-top: 30px;
+			}
+			.imag_container div {
+				width: 100%;
+				overflow: hidden;
+				background: #111c2e;
+				border: 1px solid #26364d;
+				border-radius: 12px;
+			}
+			.imag_container div img {
+				display: block;
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				transition: transform 0.4s;
+			}
+			.image2 {
+				filter: grayscale(100%);
+			}
+			.image3 {
+				filter: sepia(100%);
+			}
+			.image4 {
+				filter: blur(3px);
+			}
+			.image5 {
+				filter: saturate(200%);
+			}
+			.image6 {
+				filter: contrast(150%);
+			}
+
 		</style>
 		
 	</head>
@@ -209,22 +245,22 @@
 				</div>
 				<div class="imag_container">
 					<div>
-						<img src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<img class="image" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
 					</div>
 					<div>
-						<img src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<img class="image2" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
 					</div>
 					<div>
-						<img src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<img class="image3" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
 					</div>
 					<div>
-						<img src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<img class="image4" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
 					</div>
 					<div>
-						<img src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<img class="image5" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
 					</div>
 					<div>
-						<img src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<img class="image6" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
 					</div>
 				</div>
 			</section>
