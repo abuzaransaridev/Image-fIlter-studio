@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Contact | Abuzar Ansari
+		</title>
+			<link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+			<link rel="icon" type="image/png" href="favicon_logo.png">			
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				background: #050a12;
+				color: #f5f7fa;
+			}	
+			a 
+			{
+				text-decoration:none;
+				color: inherit;
+			}
+			header {
+				padding: 0 7%;
+				min-height: 70px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				position: sticky;
+				top: 0;
+				z-index: 10;
+				border-bottom: 1px solid #1e293b;
+				background: rgba(5, 10, 18, 0.96);
+			}
+			.project_name {
+				font-size: 26px;
+				font-weight: 700;
+				color: #f5f7fa;
+			}
+			.project_name span {
+				color: #38bdf8;
+			}			
+			.comman_section {
+				padding: 120px 7%;
+				position: relative;			
+			}
+			.section_heading {
+				margin-bottom: 60px;
+			}
+			.section_heading > span {
+				color: #299fff;
+				font-size: 16px;
+			}
+			.section_heading h2 {
+				margin-top: 12px;
+				font-size: 48px;
+			}
+			.section_heading h2 b {
+				background: linear-gradient(90deg, #1dbaff, #7357ff);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+			}
+			.contact_area 
+			{
+				display: grid;
+				grid-template-columns: repeat(2,1fr);
+				gap: 100px;
+			}
+			.contact_box h3 
+			{
+				font-size: 30px;
+				margin-bottom: 20px;
+			}
+			.contact_box > p 
+			{
+				color: #8995a5;
+				line-height: 1.8;
+			}
+			.contact_details 
+			{
+				margin-top: 35px;
+			}
+			.contact_details div 
+			{
+				display: flex;
+				align-items: center;
+				gap: 15px;
+				margin: 20px 0;
+				color: #aeb8c5;
+			}
+
+			.contact_details i 
+			{
+				color: #27aaff;
+				font-size: 22px;
+			}
+			
+			.under_line:hover
+			{
+				color:#1F72F8;
+				text-decoration:underline;
+			}			
+			.contact_form_area 
+			{
+				display: flex;
+				flex-direction: column;
+				gap:15px;
+			}
+			.contact_form_area input,.contact_form_area textarea 
+			{
+				width: 100%;
+				padding: 17px 18px;
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				border-radius: 12px;
+				outline: none;
+				color: white;
+				background: rgba(255, 255, 255, 0.04);
+				font-family: inherit;
+				font-size:15px;
+			}
+			.contact_form_area input:focus,.contact_form_area textarea:focus 
+			{
+				border-color: #229eff;
+			}
+			.contact_form_area textarea {
+				height: 150px;
+				resize: none;
+			}
+			.submit_button{
+				background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
+				padding: 16px 18px;
+				text-align: center;
+				text-transform: uppercase;
+				transition: 0.5s;
+				background-size: 200% auto;
+				color: white;
+				box-shadow: 0 0 10px #209cff;
+				border-radius: 30px;
+				cursor:pointer;
+				border:none;
+				font-size:16px;			
+			}
+			.submit_button:hover
+			{
+				transform: translateY(-3px);
+				box-shadow: 0 0 25px rgba(30, 150, 255, 0.4);
+				background-position: right center;
+				color: #fff;
+				text-decoration: none;			
+			}
+			.footer {
+				background: #080D16;
+				border-top: 1px solid #20A9FF;
+				padding: 30px 8% 20px;
+				text-align: center;
+			}
+			.footer_name h3 {
+				color: white;
+				font-size: 24px;
+				margin-bottom: 8px;
+			}
+			.footer_name h3 span {
+				color: #20A9FF;
+			}
+			.footer_name p {
+				color: #A8B3C5;
+				margin-bottom: 25px;
+				margin-top:20px;
+			}
+			.code_logo
+			{
+				font-size:25px;
+				font-weight:700;
+			}
+			.code_logo span
+			{
+				color:#20a9ff;
+				margin-right:10px;
+			}
+			.code_logo b
+			{
+				background: linear-gradient(90deg, #20a9ff, #7357ff);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;				
+			}			
+			.footer_link_area {
+				display: flex;
+				justify-content: center;
+				gap: 30px;
+				margin-bottom: 25px;
+			}
+			.footer_link_area a {
+				color: #A8B3C5;
+				text-decoration: none;
+				transition: 0.3s;
+			}
+			.footer_link_area a:hover {
+				color: #20A9FF;
+			}
+			.footer_bottom {
+				border-top: 1px solid #1B2635;
+				padding-top: 18px;
+			}
+			.footer_bottom p {
+				color: #687586;
+				font-size: 14px;
+			}			
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<a href="index.html" class="project_name">
+				<span><i class="ri-arrow-left-long-line"></i> CSS </span>Image Filter Studio
+			</a>
+		</header>
+		<main>
+			<section class="comman_section" id="contact">
+				<div class="section_heading">
+					<span>Get In Touch</span>
+					<h2>
+						Let's <b>Connect</b>
+					</h2>
+				</div>
+				<div class="contact_area">
+					<div class="contact_box">
+						<h3>Have a project in mind?</h3>
+						<p>
+							I'm always interested in learning, building
+							new projects and connecting with other developers.
+						</p>
+						<div class="contact_details">
+							<div>
+								<i class="ri-github-fill"></i>
+								<span><a class="under_line" href="https://github.com/abuzaransaridev/" target="_blank"> GitHub</a></span>
+							</div>
+							<div>
+								<i class="ri-linkedin-box-fill"></i>
+								<span><a class="under_line" href="https://www.linkedin.com/in/abuzar-ansari-dev/" target="_blank">LinkedIn</a></span>
+							</div>
+							<div>
+								<i class="ri-mail-line"></i>
+								<span><a class="under_line" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJvnJjgpwcxPdJjFwvRMQhKctDBGXLbzvrGSgXfNkJchnRkltgWkntQjRfMmmCRFkTQcNWL" target="_blank">abuzaransari.dev@gmail.com</a></span>
+							</div>
+							<div>
+								<i class="ri-map-pin-line"></i>
+								<span>Maharashtra, India</span>
+							</div>
+						</div>
+					</div>
+					<form class="contact_form_area" method="GET" action="_blank" autocomplete="on">
+						<input type="text" placeholder="Your Name" required">
+						<input type="email" placeholder="Email Address" required">
+						<input type="text" placeholder="Project / Inquiry" autocomplete="on" required>
+						<textarea placeholder="Tell me about your project..." required></textarea>
+						<button type="submit" class="submit_button">
+							Send Message
+							<i class="ri-send-plane-line"></i>
+						</button>				
+					</form>
+				</div>				
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer_name">
+				<a href="#" class="code_logo">
+					<span>&lt;/&gt;</span> Abuzar <b>Ansari</b>
+				</a>				
+				<p>Code. Create. Learn. Grow.</p>
+			</div>
+			<div class="footer_link_area">
+				<a href="https://github.com/abuzaransaridev" target="_blank">
+					GitHub
+				</a>
+				<a href="https://www.linkedin.com/in/abuzar-ansari-dev/" target="_blank">
+					LinkedIn
+				</a>
+				<a href="index.html">
+					Back to Home
+				</a>
+			</div>
+			<div class="footer_bottom">
+				<p>© 2026 Abuzar Ansari. All Rights Reserved.</p>
+			</div>
+		</footer>			
+	</body>
+</html>

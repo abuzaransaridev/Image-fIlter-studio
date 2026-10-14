@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>
-			Image Filter Studio
-		</title>
+		<title>CSS Image Filter Studio | Abuzar Ansari</title>
+		
 		<meta charset="UTF-8">
 		<meta name="author" content="Abuzar Ansari">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
-		<link rel="stylesheet" href="filter_style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="CSS Image Filter Studio developed by Abuzar Ansari using HTML and CSS to demonstrate visual effects like grayscale, sepia, blur, brightness, contrast, and more.">
+		<meta name="keywords" content="Abuzar-ansari-dev,abuzaransari.dev,CSS Image Filter Studio, Abuzar Ansari, CSS Filters Project, HTML CSS Project, CSS Image Effects, Grayscale Filter, Sepia Filter, Blur Filter, Brightness Filter, Contrast Filter, Frontend Web Development, Abuzar Ansari Projects">		
+		
+		<!-- <link rel="stylesheet" href="filter_style.css"> -->
+		<link rel="icon" type="image/png" href="favicon_logo.png">
 		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 		
 		<style>
@@ -53,13 +56,12 @@
 				gap: 25px;
 			}
 			nav a {
-				padding: 10px 0;
+				
 				color: #cbd5e1;
-				transition: 0.3s;
 			}
 			nav a:hover {
 				color: #38bdf8;
-				border-bottom: 2px solid #38bdf8;
+				border-bottom: 1px solid #38bdf8;
 			}
 			.home_section {
 				width: 100%;
@@ -97,7 +99,6 @@
 				width:60%;
 				min-width: 0;
 				height: 360px;
-				border: 1px solid #334155;
 				border-radius: 14px;
 				background: #0f172a;
 				border: 1px solid rgba(56, 189, 248, 0.4); 
@@ -110,22 +111,49 @@
 				object-fit: cover;
 			}
 			.view_gallery_button {
-				background: linear-gradient(90deg, #2563eb, #7c3aed);
-				color: #ffffff;
+				background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
+				text-transform: uppercase;
+				transition: 0.5s;
+				background-size: 200% auto;
+				color: white;
+				box-shadow: 0 0 10px #209cff;
 				border-radius: 30px;
-				padding: 15px 25px;
+				padding:16px 28px;
 				display: inline-flex;
 				align-items: center;
-				gap: 25px;
-				font-size: 15px;
-				font-weight: 600;
-				box-shadow: 0 5px 20px rgba(37, 99, 235, 0.25);
+				gap: 50px;
+				font-size: 16px;
 				transition: 0.3s;
 			}
 			.view_gallery_button:hover {
-				background: linear-gradient(90deg, #0284c7, #6366f1);
 				transform: translateY(-3px);
+				box-shadow: 0 0 25px rgba(30, 150, 255, 0.4);
+				background-position: right center;
+				color: #fff;	
 			}
+			.know_more_label {
+			  position: relative;
+			  z-index: 2;
+			  display: inline-block;
+			  transition: inherit;
+			}			
+			.fx-34::before { display: none; }
+			.fx-34 .know_more_label::after 
+			{ 
+				content: " \2192";
+				margin-left:5px;
+				display: inline-block;
+				transition: transform 0.3s ease; 
+			}			
+			.fx-34:hover .know_more_label::after 
+			{
+				transform: translateX(6px);				
+			}
+			.fx-34:hover 
+			{ 
+				padding-right: 30px;
+				background: color-mix(in srgb, var(--primary) 16%, var(--bsurf)); 
+			}			
 			.apply_filter_section {
 				padding: 40px 7% 60px;
 				background: #0b1220;
@@ -142,24 +170,35 @@
 			}
 			.filter_buttons_container {
 				display: grid;
-				grid-template-columns: repeat(7, minmax(0, 1fr));
-				gap: 12px;
-				margin-top: 25px;
+				grid-template-columns: repeat(7,1fr);
+				gap:0px 16px;
+				margin:5% 0%;
+			}			
+			.filter_buttons_container >a{
+			  background-image: linear-gradient(to right, #24C6DC 0%, #514A9D 51%, #24C6DC 100%);
 			}
-			.filter_buttons_container a {
-				padding: 15px 10px;
-				text-align: center;
-				color: #e2e8f0;
-				background: #172338;
-				border: 1px solid #2a3a53;
-				border-radius: 10px;
-				transition: 0.3s;
+
+			.filter_buttons_container >a {
+			  padding: 13px 6px;
+			  text-align: center;
+			  text-transform: uppercase;
+			  transition: 0.5s;
+			  background-size: 200% auto;
+			  color: white;
+			  box-shadow: 0 0 12px #eee;
+			  border-radius: 10px;
+			  outline: none;
+			  border: none;
 			}
-			.filter_buttons_container a:hover {
-				background: linear-gradient(90deg, #2563eb, #7c3aed);
-				border-color: #60a5fa;
-				color: #ffffff;
-				transform: translateY(-2px);
+
+			.filter_buttons_container >a:hover {
+			  background-position: right center;
+			  color: #fff;
+			}			
+			.f_blur:hover .image
+			{
+				filter: blur(3px);
+				background:green;
 			}
 			.imag_container {
 				display: grid;
@@ -173,6 +212,17 @@
 				background: #111c2e;
 				border: 1px solid #26364d;
 				border-radius: 12px;
+				position:relative;
+			}
+			.filter_name
+			{
+				position:absolute;
+				top:20px;
+				left:20px;
+				padding:2% 3%;
+				background: rgba(5, 10, 18, 0.6);
+				border-radius:15px;
+				
 			}
 			.imag_container div img {
 				display: block;
@@ -196,25 +246,118 @@
 			.image6 {
 				filter: contrast(150%);
 			}
-
+			.image7 {
+				filter:drop-shadow(4px 4px 10px rgba(0,0,0,0.5));
+			}
+			.image8 {
+				filter: hue-rotate(12deg);
+			}
+			.image9 {
+				filter: invert(100%);
+			}
+			footer {
+				background: #050a12;
+				border-top: 1px solid #1e293b;
+				padding:2% 7%;
+			}
+			.footer_boxes {
+				display: grid;
+				grid-template-columns: 1.5fr 1fr 1.5fr;
+				gap: 40px;
+				padding-bottom: 30px;
+			}
+			.box1
+			{		
+				border-right:1px solid #1e293b;
+			}
+			.box2
+			{		
+				border-right:1px solid #1e293b;
+			}
+			.footer_box h3 {
+				font-size: 20px;
+				margin-bottom: 15px;
+				color: #f8fafc;
+			}
+			.footer_box h3 span {
+				color: #38bdf8;
+			}
+			.footer_box p {
+				color: #94a3b8;
+				font-size: 14px;
+				line-height: 1.8;
+			}
+			.footer_logo {
+				display: inline-block;
+				font-size: 24px;
+				font-weight: 700;
+				margin-bottom: 12px;
+			}
+			.footer_logo span {
+				color: #38bdf8;
+			}
+			.footer_links {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+			}
+			.footer_links a {
+				width: fit-content;
+				color: #94a3b8;
+				font-size: 14px;
+				transition: 0.3s;
+			}
+			.footer_links a:hover {
+				color: #38bdf8;
+			}
+			.footer_socials {
+				display: flex;
+				gap: 12px;
+				margin-top: 18px;
+			}
+			.footer_socials a {
+				padding:9px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				border: 1px solid rgba(255, 255, 255, 0.09);
+				background: rgba(255, 255, 255, 0.035);
+				font-size: 21px;
+				color: #b8c3d2;
+				transition: 0.3s;
+			}
+			.footer_socials a:hover {
+				color: #fff;
+				border-color: #269fff;
+				transform: translateY(-4px);
+				background: rgba(35, 159, 255, 0.1);
+			}
+			.footer_bottom {
+				border-top: 1px solid #1e293b;
+				padding-top: 20px;
+				text-align: center;
+				color: #64748b;
+				font-size: 13px;
+			}		
 		</style>
 		
 	</head>
 	
 	<body>
 		<header>
-			<a href="home" class="project_name">
+			<a href="#home" class="project_name">
 				<span>CSS </span>Image Filter Studio
 			</a>
 			<nav>
-				<a href="home">Home</a>	
-				<a href="gallery">Gallery</a>
+				<a href="#home">Home</a>	
+				<a href="#image_section">Gallery</a>
 				<a href="about">About</a>
-				<a href="contact">Contact</a>
+				<a href="contact.html">Contact</a>
 			</nav>
 		</header>
 		<main>
-			<section class="home_section">
+			<section class="home_section" id="home">
 				<div class="main_containt">	
 					<div class="left_containt">
 						<span>CSS PROJECT</span>
@@ -224,56 +367,139 @@
 							with beautiful effects like grayscale, sepia, blur, brightness
 							and more all with pure HTML & CSS.
 						</p>
-						<a href="" class="view_gallery_button">View Gallery</a>
+						<a href="#image_section" class="view_gallery_button fx-34" rel="noopener noreferrer">
+							<span class="know_more_label">View Gallery</span>
+						</a>
 					</div>
 					<div class="img_containt">
-						<img src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<img class="main_img" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
 					</div>				
 				</div>	
 			</section>
-			<section class="apply_filter_section">
+			<section class="apply_filter_section" id="image_section">
 				<h2>Apply Filters</h2>
-				<span>Click on any filter to see the effect on the image below.</span>
+				<span>Explore different effects and discover a new look for every image.</span>
 				<div class="filter_buttons_container">
-					<a href="original">Original</a>
-					<a href="grayscale">Grayscale</a>
-					<a href="sepia">Sepia</a>
-					<a href="blur">Blur</a>
-					<a href="brightness">Brightness</a>
-					<a href="contrast">Contrast</a>
-					<a href="saturate">Saturate</a>
+					<a href="original"> <i class="ri-image-line"></i> Original</a>
+					<a href="grayscale"> <i class="ri-contrast-drop-2-line"></i> Grayscale</a>
+					<a href="sepia"> <i class="ri-sun-line"></i> Sepia</a>
+					<a href="blur" class="f_blur"> <i class="ri-drop-line"></i> Blur</a>
+					<a href="brightness"> <i class="ri-sun-line"></i> Brightness</a>
+					<a href="contrast">  <i class="ri-contrast-2-line"></i> Contrast</a>
+					<a href="saturate"> <i class="ri-contrast-drop-2-line"></i> Saturate</a>
 				</div>
 				<div class="imag_container">
 					<div>
 						<img class="image" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							  Original
+						</span>
 					</div>
 					<div>
 						<img class="image2" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							Grayscale
+						</span>						
 					</div>
 					<div>
 						<img class="image3" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							Sepia
+						</span>						
 					</div>
 					<div>
 						<img class="image4" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							Blur
+						</span>						
 					</div>
 					<div>
 						<img class="image5" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							Saturate
+						</span>						
 					</div>
 					<div>
 						<img class="image6" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							Contrast
+						</span>					
+					</div>
+					<div>
+						<img class="image7" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							Drop-shadow
+						</span>						
+					</div>
+					<div>
+						<img class="image8" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							  Hue-rotate
+						</span>						
+					</div>
+					<div>
+						<img class="image9" src="https://marketplace.canva.com/Oua8U/MAHVi5Oua8U/1/s2/canva-scenic-view-of-the-canadian-rockies-in-banff-MAHVi5Oua8U.jpg">
+						<span class="filter_name">
+							Invert
+						</span>						
 					</div>
 				</div>
 			</section>
-			<section>
-			
-			</section>
-			<section>
-			
-			</section>
-			<section>
-			
-			</section>
 		</main>
-		
+		<footer>
+			<div class="footer_boxes">
+				<div class="footer_box box1">
+					<a href="#home" class="footer_logo">
+						<span>&lt;/&gt;</span> Abuzar <span>Ansari</span>
+					</a>
+					<p>
+						Computer Science Student | Web Developer
+					</p>
+					<p>
+						Exploring the power of CSS filters
+						through creative web design.
+					</p>
+					<div class="footer_socials">
+						<a href="https://github.com/abuzaransaridev/"target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+							<i class="ri-github-fill"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/abuzar-ansari-dev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+							<i class="ri-linkedin-fill"></i>
+						</a>
+						<a href="https://abuzar-ansari-dev-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio">
+							<i class="ri-global-line"></i>
+						</a>
+					</div>
+				</div>
+				<div class="footer_box box2">
+					<h3>Quick Links</h3>
+					<div class="footer_links">
+						<a href="#home" class="fx-34"><span class="know_more_label">Home</span></a>
+						<a href="#image_section" class="fx-34"><span class="know_more_label">Gallery</span></a>
+						<a href="#about" class="fx-34"><span class="know_more_label">About</span></a>
+						<a href="contact.html" class="fx-34"><span class="know_more_label">Contact</span></a>
+					</div>
+				</div>
+				<div class="footer_box">
+					<h3>About This <span>Project</span></h3>
+					<p>
+						CSS Image Filter Studio demonstrates
+						different visual effects using pure
+						HTML and CSS.
+					</p>
+					<p>
+						Filters featured: Grayscale, Sepia,
+						Blur, Saturate, Contrast, Drop-shadow,
+						Hue-rotate, Invert and Brightness.
+					</p>
+				</div>
+			</div>
+			<div class="footer_bottom">
+				<p>
+					&copy; 2026 Abuzar Ansari.
+					All rights reserved.
+				</p>
+			</div>
+		</footer>
 	</body>
 </html>
