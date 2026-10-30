@@ -216,6 +216,10 @@
 	.image2 {
 		filter: grayscale(100%);
 	}
+	.image2:hover
+	{
+		transform: rotate(20deg);
+	}
 	.image3 {
 		filter: sepia(100%);
 	}
